@@ -2,7 +2,7 @@
 % Please edit documentation in R/oswestry.R
 \name{score.oswestry}
 \alias{score.oswestry}
-\title{score.oswestry}
+\title{Oswestry Disability Index}
 \usage{
 score.oswestry(
   data,
@@ -30,10 +30,12 @@ score.oswestry(
 \item{keepScoring}{A logical: should item scoring be kept?}
 }
 \value{
-A tibble.
+A dataframe or tibble containing the scored Oswestry Disability Index.
 }
 \description{
-score.oswestry
+`score_oswestry()` returns a tibble containing the decoded scores of the
+Oswestry Disability Index. It is possible to keep the original item repsonses
+and the item scoring if desired.
 }
 \examples{
 score.oswestry(

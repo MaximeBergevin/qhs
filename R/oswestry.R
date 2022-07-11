@@ -11,7 +11,11 @@
 # If this is not the case, please, pivot your dataframe
 # This is easily doable with dplyr::pivot_longer
 
-#' score.oswestry
+#' Oswestry Disability Index
+#'
+#' `score_oswestry()` returns a tibble containing the decoded scores of the
+#' Oswestry Disability Index. It is possible to keep the original item repsonses
+#' and the item scoring if desired.
 #'
 #' @param data A dataframe.
 #' @param obs A string specifying the column containing participants' id.
@@ -21,7 +25,8 @@
 #' @param keepResponses A logical: should original item responses be kept?
 #' @param keepScoring  A logical: should item scoring be kept?
 #'
-#' @return A tibble.
+#' @return
+#' A dataframe or tibble containing the scored Oswestry Disability Index.
 #' @export
 #'
 #' @examples
