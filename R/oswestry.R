@@ -11,7 +11,7 @@
 # If this is not the case, please, pivot your dataframe
 # This is easily doable with dplyr::pivot_longer
 
-#' Title
+#' score.oswestry
 #'
 #' @param data A dataframe.
 #' @param obs A string specifying the column containing participants' id.

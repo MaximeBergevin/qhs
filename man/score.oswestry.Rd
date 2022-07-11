@@ -2,7 +2,7 @@
 % Please edit documentation in R/oswestry.R
 \name{score.oswestry}
 \alias{score.oswestry}
-\title{Title}
+\title{score.oswestry}
 \usage{
 score.oswestry(
   data,
@@ -33,7 +33,7 @@ score.oswestry(
 A tibble.
 }
 \description{
-Title
+score.oswestry
 }
 \examples{
 score.oswestry(
