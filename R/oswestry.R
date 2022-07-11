@@ -402,6 +402,35 @@ score.oswestry <- function(
       dplyr::mutate(oswestry = numerator / denominator * 100)
   }
 
+  # Only keep columns relevant to the oswestry.
+  scored.oswestry <- scored.oswestry %>%
+    dplyr::select(
+      id,
+      date,
+      painIntensity,
+      personalCare,
+      lifting,
+      walking,
+      sitting,
+      standing,
+      sleeping,
+      sexLife,
+      socialLife,
+      travelling,
+      scored.pain,
+      scored.personalCare,
+      scored.lifting,
+      scored.walking,
+      scored.sitting,
+      scored.standing,
+      scored.sleeping,
+      scored.sexLife,
+      scored.socialLife,
+      scored.travelling,
+      numerator,
+      denominator,
+      oswestry
+    )
 
   # REMOVES INDIVIDUAL ITEM RESPONSES IF keepResponses == FALSE
   # Keep original responses if keepResponses == TRUE
