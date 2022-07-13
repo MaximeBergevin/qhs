@@ -15,15 +15,16 @@ score.oswestry(
 )
 }
 \arguments{
-\item{data}{A dataframe.}
+\item{data}{A dataframe containing the survey responses.}
 
 \item{obs}{A string specifying the column containing participants' id.}
 
-\item{cols}{An interger vector specifying the range of the items to score.}
+\item{cols}{An interger vector specifying the range of the items to score.
+Must be of length 10. Note that `unique()` is applied on the vector.}
 
 \item{language}{A string specifying the language. Can be either "english" or "french".}
 
-\item{date}{A string specifying the column contianing the date.}
+\item{date}{A string specifying the column containing the date.}
 
 \item{keepResponses}{A logical: should original item responses be kept?}
 
@@ -38,9 +39,10 @@ Oswestry Disability Index. It is possible to keep the original item repsonses
 and the item scoring if desired.
 }
 \examples{
+library(dplyr)
 score.oswestry(
-data = dat,
-obs = 'Token',
-cols = 3:12,
-language = 'french')
+data = oswestry_eng,
+obs = 'id',
+cols = 3:12
+)
 }
