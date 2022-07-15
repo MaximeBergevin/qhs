@@ -28,15 +28,12 @@
 #'
 #' @return
 #' A dataframe or tibble containing the scored Oswestry Disability Index.
-#' @export
+#' @references
+#'        Denis, I., & Fortin, L. (2012). Development of a French-Canadian version of the Oswestry Disability Index: cross-cultural adaptation and validation. Spine, 37(7), E439–E444. https://doi.org/10.1097/BRS.0b013e318233eaf9
 #'
-#' @examples
-#' library(dplyr)
-#' score.oswestry(
-#' data = oswestry_eng,
-#' obs = 'id',
-#' cols = 3:12
-#' )
+#'        Fairbank J. C. (2014). Why are there different versions of the Oswestry Disability Index?. Journal of neurosurgery. Spine, 20(1), 83–86. https://doi.org/10.3171/2013.9.SPINE13344
+#'
+
 score.oswestry <- function(
     data,                   # Dataframe containing responses
     obs,                    # String: Column identifying participants
