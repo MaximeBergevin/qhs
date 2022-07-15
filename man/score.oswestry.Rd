@@ -20,7 +20,9 @@ score.oswestry(
 \item{obs}{A string specifying the column containing participants' id.}
 
 \item{cols}{An interger vector specifying the range of the items to score.
-Must be of length 10. Note that `unique()` is applied on the vector.}
+Must be of length 10. Note that `unique()` is applied on the vector.
+A warning is given if too many NA values are detected in the output.
+Additionnaly, errors given in ``rename_impl()` also hint towards cols set incorrectly.}
 
 \item{language}{A string specifying the language. Can be either "english" or "french".}
 
@@ -34,9 +36,8 @@ Must be of length 10. Note that `unique()` is applied on the vector.}
 A dataframe or tibble containing the scored Oswestry Disability Index.
 }
 \description{
-`score_oswestry()` returns a tibble containing the decoded scores of the
-Oswestry Disability Index. It is possible to keep the original item repsonses
-and the item scoring if desired.
+Returns a tibble containing the decoded scores of the Oswestry Disability Index.
+It is possible to keep the original item repsonses and the item scoring if desired.
 }
 \references{
 Denis, I., & Fortin, L. (2012). Development of a French-Canadian version of the Oswestry Disability Index: cross-cultural adaptation and validation. Spine, 37(7), E439–E444. https://doi.org/10.1097/BRS.0b013e318233eaf9

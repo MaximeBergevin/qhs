@@ -13,14 +13,17 @@
 
 #' Oswestry Disability Index
 #'
-#' `score_oswestry()` returns a tibble containing the decoded scores of the
-#' Oswestry Disability Index. It is possible to keep the original item repsonses
-#' and the item scoring if desired.
+#' Returns a tibble containing the decoded scores of the Oswestry Disability Index.
+#' It is possible to keep the original item repsonses and the item scoring if desired.
+#'
+#' @import dplyr
 #'
 #' @param data A dataframe containing the survey responses.
 #' @param obs A string specifying the column containing participants' id.
 #' @param cols An interger vector specifying the range of the items to score.
 #'             Must be of length 10. Note that `unique()` is applied on the vector.
+#'             A warning is given if too many NA values are detected in the output.
+#'             Additionnaly, errors given in ``rename_impl()` also hint towards cols set incorrectly.
 #' @param language A string specifying the language. Can be either "english" or "french".
 #' @param date A string specifying the column containing the date.
 #' @param keepResponses A logical: should original item responses be kept?
@@ -43,15 +46,6 @@ score.oswestry <- function(
     keepResponses = FALSE,  # Logical: Should original responses be kept?
     keepScoring = FALSE     # Logical: Should item scoring be kept?
 ) {
-
-
-  # CHECK: dplyr should be loaded
-  if(!('dplyr' %in% rownames(installed.packages()))){
-    base::stop(
-      "Package dplyr currently uninstalled. Please install this package with
-      install.packages('dplyr') or install.packages('tidyverse')."
-      )
-  }
 
 
   # CHECK: cols should be of length 21
@@ -79,7 +73,7 @@ score.oswestry <- function(
 
   # SCORING IN ENGLISH
   if(base::tolower(language) == 'english'){
-    scored.oswestry <- data %>%
+    .scored.oswestry <- data %>%
       dplyr::rename(id = obs) %>%
       dplyr::rename(date = date) %>%
       dplyr::mutate(id = base::tolower(id)) %>%
@@ -208,7 +202,7 @@ score.oswestry <- function(
         )
       )
     # Sum of every observations' answers
-    scored.oswestry <- scored.oswestry %>%
+    .scored.oswestry <- .scored.oswestry %>%
       dplyr::mutate(
         numerator =
           base::ifelse(is.na(scored.pain),0,scored.pain) +
@@ -226,8 +220,8 @@ score.oswestry <- function(
       dplyr::mutate(
         denominator = 50 - 5 * base::rowSums(
           base::is.na(
-            scored.oswestry[, grep('scored.pain', colnames(scored.oswestry)):
-                              grep('scored.travelling', colnames(scored.oswestry))]
+            .scored.oswestry[, grep('scored.pain', colnames(.scored.oswestry)):
+                              grep('scored.travelling', colnames(.scored.oswestry))]
           )
         )
       ) %>%
@@ -238,7 +232,7 @@ score.oswestry <- function(
 
   # SCORING IN FRENCH
   if(base::tolower(language) == 'french'){
-    scored.oswestry <- data %>%
+    .scored.oswestry <- data %>%
       dplyr::rename(id = obs) %>%
       dplyr::mutate(id = base::tolower(id)) %>%
       # Rename cols enabling the use of case_when
@@ -370,7 +364,7 @@ score.oswestry <- function(
         )
       )
     # Sum of every observations' answers
-    scored.oswestry <- scored.oswestry %>%
+    .scored.oswestry <- .scored.oswestry %>%
       dplyr::mutate(
         numerator =
           base::ifelse(is.na(scored.pain),0,scored.pain) +
@@ -388,8 +382,8 @@ score.oswestry <- function(
       dplyr::mutate(
         denominator = 50 - 5 * base::rowSums(
           base::is.na(
-            scored.oswestry[, grep('scored.pain', colnames(scored.oswestry)):
-                              grep('scored.travelling', colnames(scored.oswestry))]
+            .scored.oswestry[, grep('scored.pain', colnames(.scored.oswestry)):
+                              grep('scored.travelling', colnames(.scored.oswestry))]
           )
         )
       ) %>%
@@ -398,7 +392,7 @@ score.oswestry <- function(
   }
 
   # Only keep columns relevant to the oswestry.
-  scored.oswestry <- scored.oswestry %>%
+  .scored.oswestry <- .scored.oswestry %>%
     dplyr::select(
       id,
       date,
@@ -427,10 +421,30 @@ score.oswestry <- function(
       oswestry
     )
 
+
+  # GIVES A WARNING IF AT LEAST ONE COLUMN HAS MORE THAN 50% NA VALUES
+  # This indicates that the cols argument is probably set incorrectly
+  # Possibly to supress with
+  na_count <- .scored.oswestry %>%
+    dplyr::select(dplyr::contains("scored.")) %>%
+    dplyr::summarise_all(
+      ~ sum(is.na(.))/length(.scored.oswestry$id)) %>%
+    tidyr::pivot_longer(cols = 2:10,
+                        names_to = 'item',
+                        values_to = 'na_prop') %>%
+    filter(na_prop >= 0.5)
+  if(length(na_count$na_prop) >= 1){
+    base::warning("The following items have high proportions (>= 50%) of NA values.",
+                  " Argument `cols` may not be set correctly. \n",
+                  base::paste0(na_count$item, sep = ', ')
+    )
+  }
+
+
   # REMOVES INDIVIDUAL ITEM RESPONSES IF keepResponses == FALSE
   # Keep original responses if keepResponses == TRUE
   if(keepResponses == FALSE){
-    scored.oswestry <- scored.oswestry %>%
+    .scored.oswestry <- .scored.oswestry %>%
       dplyr::select(- painIntensity,
                     - personalCare,
                     - lifting,
@@ -445,8 +459,10 @@ score.oswestry <- function(
   }
 
 
+  # REMOVES INDIVIDUAL ITEM SCORING IF keepScoring == FALSE
+  # Keep item scoring if keepScoring == TRUE
   if(keepScoring == FALSE){
-    scored.oswestry <- scored.oswestry %>%
+    .scored.oswestry <- .scored.oswestry %>%
       dplyr::select(- scored.pain,
                     - scored.personalCare,
                     - scored.lifting,
@@ -466,5 +482,5 @@ score.oswestry <- function(
   }
 
 
-  return(scored.oswestry)
+  return(.scored.oswestry)
 }
