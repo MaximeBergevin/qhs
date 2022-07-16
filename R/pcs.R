@@ -17,6 +17,7 @@
 #' It is possible to keep the original item repsonses and the item scoring if desired.
 #'
 #' @import dplyr
+#' @export
 #'
 #' @param data A dataframe containing the survey responses.
 #' @param obs A string specifying the column containing participants' id.
