@@ -234,6 +234,7 @@ score.oswestry <- function(
   if(base::tolower(language) == 'french'){
     .scored.oswestry <- data %>%
       dplyr::rename(id = obs) %>%
+      dplyr::rename(date = date) %>%
       dplyr::mutate(id = base::tolower(id)) %>%
       # Rename cols enabling the use of case_when
       # Currently, I do not know how to use col index in case_when
@@ -477,8 +478,8 @@ score.oswestry <- function(
                     - denominator
       )
   } else {
-    print('numerator is the sum of item scoring of each observation.')
-    print('denominator is the maximal scoring possible, adjusted for NA values.')
+    cat('numerator is the sum of item scoring of each observation. \n',
+    'denominator is the maximal scoring possible, adjusted for NA values.')
   }
 
 
