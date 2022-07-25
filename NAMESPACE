@@ -2,4 +2,5 @@
 
 export(score.oswestry)
 export(score.pcs)
+export(score.tsk)
 import(dplyr)
