@@ -24,5 +24,5 @@ Please note a few quirks of this package:
 - Psychology -- Big Five Inventory (BFI)
 - Psychology -- State-Trait Anxiety Inventory (STAI)
 - Sleep medicine -- Epworth Sleepiness Scale (ESS)
-• Sleep medicine --Insomnia Severity Index (ISS)
-• Sleep medicine -- Pittsburgh Sleep Quality Index (PSQ)
+- Sleep medicine --Insomnia Severity Index (ISS)
+- Sleep medicine -- Pittsburgh Sleep Quality Index (PSQ)
