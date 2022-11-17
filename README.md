@@ -18,7 +18,7 @@ Please note a few quirks of this package:
 - Chronic pain -- Oswestry Disability Index (ODI)
 - Chronic pain -- Pain Catastrophizing Scale (PCS)
 - Chronic pain -- Tampa Scale of Kinesiophobia (TSK)
-- Psychology -- Beck's Depression Inventory II (BDI-II)
+- Psychology -- Beck Depression Inventory II (BDI-II)
 
 ## Planned
 - Psychology -- Big Five Inventory (BFI)
