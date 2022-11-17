@@ -15,14 +15,14 @@ Please note a few quirks of this package:
 
 ## Available questionnaires
 
-• Chronic pain -- Oswestry Disability Index (ODI)
-• Chronic pain -- Pain Catastrophizing Scale (PCS)
-• Chronic pain -- Tampa Scale of Kinesiophobia (TSK)
+- Chronic pain -- Oswestry Disability Index (ODI)
+- Chronic pain -- Pain Catastrophizing Scale (PCS)
+- Chronic pain -- Tampa Scale of Kinesiophobia (TSK)
 
 ## Planned
-• Psychology -- Beck's Depression Inventory (BDI)
-• Psychology -- Big Five Inventory (BFI)
-• Psychology -- State-Trait Anxiety Inventory (STAI)
-• Sleep medicine -- Epworth Sleepiness Scale (ESS)
+- Psychology -- Beck's Depression Inventory (BDI)
+- Psychology -- Big Five Inventory (BFI)
+- Psychology -- State-Trait Anxiety Inventory (STAI)
+- Sleep medicine -- Epworth Sleepiness Scale (ESS)
 • Sleep medicine --Insomnia Severity Index (ISS)
 • Sleep medicine -- Pittsburgh Sleep Quality Index (PSQ)
