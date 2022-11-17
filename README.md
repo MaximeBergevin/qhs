@@ -12,3 +12,17 @@ Please note a few quirks of this package:
 - The column containing participants' IDs will be renamed to `id`.
 - The `date` column will be absent if not specified, unless the original dataframe contains the column `date`. At the moment, there is no option to remove this column as it is a useful information to identify the participants' response order in repeated-measure designs. If it is not desired, it is possible to pipe (`%>%`) the output and apply `dplyr::select(-date)`.
 - **Most importantly, while the package prevents you from specifying too many columns, it does not prevent you from scoring items in the *wrong* order. However, the code checks if at least one column has only NA values and, if this is the case, will return a warning that item ordering may not be adequate.**
+
+## Available questionnaires
+
+- Chronic pain -- Oswestry Disability Index (ODI)
+- Chronic pain -- Pain Catastrophizing Scale (PCS)
+- Chronic pain -- Tampa Scale of Kinesiophobia (TSK)
+
+## Planned
+- Psychology -- Beck's Depression Inventory II (BDI-II)
+- Psychology -- Big Five Inventory (BFI)
+- Psychology -- State-Trait Anxiety Inventory (STAI)
+- Sleep medicine -- Epworth Sleepiness Scale (ESS)
+- Sleep medicine --Insomnia Severity Index (ISS)
+- Sleep medicine -- Pittsburgh Sleep Quality Index (PSQ)
