@@ -20,7 +20,7 @@ Please note a few quirks of this package:
 - Chronic pain -- Tampa Scale of Kinesiophobia (TSK)
 
 ## Planned
-- Psychology -- Beck's Depression Inventory (BDI)
+- Psychology -- Beck's Depression Inventory II (BDI-II)
 - Psychology -- Big Five Inventory (BFI)
 - Psychology -- State-Trait Anxiety Inventory (STAI)
 - Sleep medicine -- Epworth Sleepiness Scale (ESS)
