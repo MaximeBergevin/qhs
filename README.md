@@ -2,7 +2,7 @@
 `qhs` is meant to be an easy to use, dplyr-friendly package to score and decode common questionnaires used in health sciences. As I work in a multidisciplinary laboratory focusing on kinesiology, neuroscience and (neuro)psychology, most of the early functions will be relevant to that field. However, I will be taking requests to add new questionnaires periodically. Please note that this process is time-consumming and I do this on my own time. As such, maintenance and development of this package is most likely going to be slow.
 
 ## Installation.
-I will start the process to publish it to CRAN once there are enough functions in the package. At the moment, `qhs` is solely hosted on GitHub. You can install it via the following code. 
+I will start the process to publish it to CRAN once there are enough functions in the package. At the moment, `qhs` is solely hosted on GitHub. You can install it via the following code.
 ```
 devtools::install_github('MaximeBergevin/qhs')
 ```
@@ -26,3 +26,4 @@ Please note a few quirks of this package:
 - Sleep medicine -- Epworth Sleepiness Scale (ESS)
 - Sleep medicine --Insomnia Severity Index (ISS)
 - Sleep medicine -- Pittsburgh Sleep Quality Index (PSQ)
+- MORE TO COME!
