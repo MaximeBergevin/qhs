@@ -99,103 +99,103 @@ score.pcs <- function(
       # Score individual questions
       dplyr::mutate(
         item1 = case_when(
-          grepl('not at all', base::tolower(helplessness.1)) ~ 0,
-          grepl('slight', base::tolower(helplessness.1)) ~ 1,
-          grepl('moderate', base::tolower(helplessness.1)) ~ 2,
-          grepl('great', base::tolower(helplessness.1)) ~ 3,
-          grepl('all the time', base::tolower(helplessness.1)) ~ 4
+          grepl('not at all', base::tolower(.data$helplessness.1)) ~ 0,
+          grepl('slight', base::tolower(.data$helplessness.1)) ~ 1,
+          grepl('moderate', base::tolower(.data$helplessness.1)) ~ 2,
+          grepl('great', base::tolower(.data$helplessness.1)) ~ 3,
+          grepl('all the time', base::tolower(.data$helplessness.1)) ~ 4
           ),
         item2 = case_when(
-          grepl('not at all', base::tolower(helplessness.2)) ~ 0,
-          grepl('slight', base::tolower(helplessness.2)) ~ 1,
-          grepl('moderate', base::tolower(helplessness.2)) ~ 2,
-          grepl('great', base::tolower(helplessness.2)) ~ 3,
-          grepl('all the time', base::tolower(helplessness.2)) ~ 4
+          grepl('not at all', base::tolower(.data$helplessness.2)) ~ 0,
+          grepl('slight', base::tolower(.data$helplessness.2)) ~ 1,
+          grepl('moderate', base::tolower(.data$helplessness.2)) ~ 2,
+          grepl('great', base::tolower(.data$helplessness.2)) ~ 3,
+          grepl('all the time', base::tolower(.data$helplessness.2)) ~ 4
           ),
         item3 = case_when(
-          grepl('not at all', base::tolower(helplessness.3)) ~ 0,
-          grepl('slight', base::tolower(helplessness.3)) ~ 1,
-          grepl('moderate', base::tolower(helplessness.3)) ~ 2,
-          grepl('great', base::tolower(helplessness.3)) ~ 3,
-          grepl('all the time', base::tolower(helplessness.3)) ~ 4
+          grepl('not at all', base::tolower(.data$helplessness.3)) ~ 0,
+          grepl('slight', base::tolower(.data$helplessness.3)) ~ 1,
+          grepl('moderate', base::tolower(.data$helplessness.3)) ~ 2,
+          grepl('great', base::tolower(.data$helplessness.3)) ~ 3,
+          grepl('all the time', base::tolower(.data$helplessness.3)) ~ 4
           ),
         item4 = case_when(
-          grepl('not at all', base::tolower(helplessness.4)) ~ 0,
-          grepl('slight', base::tolower(helplessness.4)) ~ 1,
-          grepl('moderate', base::tolower(helplessness.4)) ~ 2,
-          grepl('great', base::tolower(helplessness.4)) ~ 3,
-          grepl('all the time', base::tolower(helplessness.4)) ~ 4
+          grepl('not at all', base::tolower(.data$helplessness.4)) ~ 0,
+          grepl('slight', base::tolower(.data$helplessness.4)) ~ 1,
+          grepl('moderate', base::tolower(.data$helplessness.4)) ~ 2,
+          grepl('great', base::tolower(.data$helplessness.4)) ~ 3,
+          grepl('all the time', base::tolower(.data$helplessness.4)) ~ 4
           ),
         item5 = case_when(
-          grepl('not at all', base::tolower(helplessness.5)) ~ 0,
-          grepl('slight', base::tolower(helplessness.5)) ~ 1,
-          grepl('moderate', base::tolower(helplessness.5)) ~ 2,
-          grepl('great', base::tolower(helplessness.5)) ~ 3,
-          grepl('all the time', base::tolower(helplessness.5)) ~ 4
+          grepl('not at all', base::tolower(.data$helplessness.5)) ~ 0,
+          grepl('slight', base::tolower(.data$helplessness.5)) ~ 1,
+          grepl('moderate', base::tolower(.data$helplessness.5)) ~ 2,
+          grepl('great', base::tolower(.data$helplessness.5)) ~ 3,
+          grepl('all the time', base::tolower(.data$helplessness.5)) ~ 4
           ),
         item6 = case_when(
-          grepl('not at all', base::tolower(magnification.6)) ~ 0,
-          grepl('slight', base::tolower(magnification.6)) ~ 1,
-          grepl('moderate', base::tolower(magnification.6)) ~ 2,
-          grepl('great', base::tolower(magnification.6)) ~ 3,
-          grepl('all the time', base::tolower(magnification.6)) ~ 4
+          grepl('not at all', base::tolower(.data$magnification.6)) ~ 0,
+          grepl('slight', base::tolower(.data$magnification.6)) ~ 1,
+          grepl('moderate', base::tolower(.data$magnification.6)) ~ 2,
+          grepl('great', base::tolower(.data$magnification.6)) ~ 3,
+          grepl('all the time', base::tolower(.data$magnification.6)) ~ 4
           ),
         item7 = case_when(
-          grepl('not at all', base::tolower(magnification.7)) ~ 0,
-          grepl('slight', base::tolower(magnification.7)) ~ 1,
-          grepl('moderate', base::tolower(magnification.7)) ~ 2,
-          grepl('great', base::tolower(magnification.7)) ~ 3,
-          grepl('all the time', base::tolower(magnification.7)) ~ 4
+          grepl('not at all', base::tolower(.data$magnification.7)) ~ 0,
+          grepl('slight', base::tolower(.data$magnification.7)) ~ 1,
+          grepl('moderate', base::tolower(.data$magnification.7)) ~ 2,
+          grepl('great', base::tolower(.data$magnification.7)) ~ 3,
+          grepl('all the time', base::tolower(.data$magnification.7)) ~ 4
           ),
         item8 = case_when(
-          grepl('not at all', base::tolower(rumination.8)) ~ 0,
-          grepl('slight', base::tolower(rumination.8)) ~ 1,
-          grepl('moderate', base::tolower(rumination.8)) ~ 2,
-          grepl('great', base::tolower(rumination.8)) ~ 3,
-          grepl('all the time', base::tolower(rumination.8)) ~ 4
+          grepl('not at all', base::tolower(.data$rumination.8)) ~ 0,
+          grepl('slight', base::tolower(.data$rumination.8)) ~ 1,
+          grepl('moderate', base::tolower(.data$rumination.8)) ~ 2,
+          grepl('great', base::tolower(.data$rumination.8)) ~ 3,
+          grepl('all the time', base::tolower(.data$rumination.8)) ~ 4
           ),
         item9 = case_when(
-          grepl('not at all', base::tolower(rumination.9)) ~ 0,
-          grepl('slight', base::tolower(rumination.9)) ~ 1,
-          grepl('moderate', base::tolower(rumination.9)) ~ 2,
-          grepl('great', base::tolower(rumination.9)) ~ 3,
-          grepl('all the time', base::tolower(rumination.9)) ~ 4
+          grepl('not at all', base::tolower(.data$rumination.9)) ~ 0,
+          grepl('slight', base::tolower(.data$rumination.9)) ~ 1,
+          grepl('moderate', base::tolower(.data$rumination.9)) ~ 2,
+          grepl('great', base::tolower(.data$rumination.9)) ~ 3,
+          grepl('all the time', base::tolower(.data$rumination.9)) ~ 4
           ),
         item10 = case_when(
-          grepl('not at all', base::tolower(rumination.10)) ~ 0,
-          grepl('slight', base::tolower(rumination.10)) ~ 1,
-          grepl('moderate', base::tolower(rumination.10)) ~ 2,
-          grepl('great', base::tolower(rumination.10)) ~ 3,
-          grepl('all the time', base::tolower(rumination.10)) ~ 4
+          grepl('not at all', base::tolower(.data$rumination.10)) ~ 0,
+          grepl('slight', base::tolower(.data$rumination.10)) ~ 1,
+          grepl('moderate', base::tolower(.data$rumination.10)) ~ 2,
+          grepl('great', base::tolower(.data$rumination.10)) ~ 3,
+          grepl('all the time', base::tolower(.data$rumination.10)) ~ 4
           ),
         item11 = case_when(
-          grepl('not at all', base::tolower(rumination.11)) ~ 0,
-          grepl('slight', base::tolower(rumination.11)) ~ 1,
-          grepl('moderate', base::tolower(rumination.11)) ~ 2,
-          grepl('great', base::tolower(rumination.11)) ~ 3,
-          grepl('all the time', base::tolower(rumination.11)) ~ 4
+          grepl('not at all', base::tolower(.data$rumination.11)) ~ 0,
+          grepl('slight', base::tolower(.data$rumination.11)) ~ 1,
+          grepl('moderate', base::tolower(.data$rumination.11)) ~ 2,
+          grepl('great', base::tolower(.data$rumination.11)) ~ 3,
+          grepl('all the time', base::tolower(.data$rumination.11)) ~ 4
           ),
         item12 = case_when(
-          grepl('not at all', base::tolower(helplessness.12)) ~ 0,
-          grepl('slight', base::tolower(helplessness.12)) ~ 1,
-          grepl('moderate', base::tolower(helplessness.12)) ~ 2,
-          grepl('great', base::tolower(helplessness.12)) ~ 3,
-          grepl('all the time', base::tolower(helplessness.12)) ~ 4
+          grepl('not at all', base::tolower(.data$helplessness.12)) ~ 0,
+          grepl('slight', base::tolower(.data$helplessness.12)) ~ 1,
+          grepl('moderate', base::tolower(.data$helplessness.12)) ~ 2,
+          grepl('great', base::tolower(.data$helplessness.12)) ~ 3,
+          grepl('all the time', base::tolower(.data$helplessness.12)) ~ 4
           ),
         item13 = case_when(
-          grepl('not at all', base::tolower(magnification.13)) ~ 0,
-          grepl('slight', base::tolower(magnification.13)) ~ 1,
-          grepl('moderate', base::tolower(magnification.13)) ~ 2,
-          grepl('great', base::tolower(magnification.13)) ~ 3,
-          grepl('all the time', base::tolower(magnification.13)) ~ 4
+          grepl('not at all', base::tolower(.data$magnification.13)) ~ 0,
+          grepl('slight', base::tolower(.data$magnification.13)) ~ 1,
+          grepl('moderate', base::tolower(.data$magnification.13)) ~ 2,
+          grepl('great', base::tolower(.data$magnification.13)) ~ 3,
+          grepl('all the time', base::tolower(.data$magnification.13)) ~ 4
           )
         ) %>%
       # Score the subscale scores
       dplyr::mutate(
-        scored.helplessness = item1 + item2 + item3 + item4 + item5 + item12,
-        scored.magnification = item6 + item7 + item13,
-        scored.rumination = item8 + item9 + item10 + item11,
-        pcs = scored.helplessness + scored.magnification + scored.rumination
+        scored.helplessness = .data$item1 + .data$item2 + .data$item3 + .data$item4 + .data$item5 + .data$item12,
+        scored.magnification = .data$item6 + .data$item7 + .data$item13,
+        scored.rumination = .data$item8 + .data$item9 + .data$item10 + .data$item11,
+        pcs = .data$scored.helplessness + .data$scored.magnification + .data$scored.rumination
       )
   }
 
@@ -226,103 +226,103 @@ score.pcs <- function(
       # Score individual questions
       dplyr::mutate(
         item1 = case_when(
-          grepl('du tout', base::tolower(helplessness.1)) ~ 0,
-          grepl('peu', base::tolower(helplessness.1)) ~ 1,
-          grepl('mod.*r.*e', base::tolower(helplessness.1)) ~ 2,
-          grepl('beaucoup', base::tolower(helplessness.1)) ~ 3,
-          grepl('tout le temps', base::tolower(helplessness.1)) ~ 4
+          grepl('du tout', base::tolower(.data$helplessness.1)) ~ 0,
+          grepl('peu', base::tolower(.data$helplessness.1)) ~ 1,
+          grepl('mod.*r.*e', base::tolower(.data$helplessness.1)) ~ 2,
+          grepl('beaucoup', base::tolower(.data$helplessness.1)) ~ 3,
+          grepl('tout le temps', base::tolower(.data$helplessness.1)) ~ 4
         ),
         item2 = case_when(
-          grepl('du tout', base::tolower(helplessness.2)) ~ 0,
-          grepl('peu', base::tolower(helplessness.2)) ~ 1,
-          grepl('mod.*r.*e', base::tolower(helplessness.2)) ~ 2,
-          grepl('beaucoup', base::tolower(helplessness.2)) ~ 3,
-          grepl('tout le temps', base::tolower(helplessness.2)) ~ 4
+          grepl('du tout', base::tolower(.data$helplessness.2)) ~ 0,
+          grepl('peu', base::tolower(.data$helplessness.2)) ~ 1,
+          grepl('mod.*r.*e', base::tolower(.data$helplessness.2)) ~ 2,
+          grepl('beaucoup', base::tolower(.data$helplessness.2)) ~ 3,
+          grepl('tout le temps', base::tolower(.data$helplessness.2)) ~ 4
         ),
         item3 = case_when(
-          grepl('du tout', base::tolower(helplessness.3)) ~ 0,
-          grepl('peu', base::tolower(helplessness.3)) ~ 1,
-          grepl('mod.*r.*e', base::tolower(helplessness.3)) ~ 2,
-          grepl('beaucoup', base::tolower(helplessness.3)) ~ 3,
-          grepl('tout le temps', base::tolower(helplessness.3)) ~ 4
+          grepl('du tout', base::tolower(.data$helplessness.3)) ~ 0,
+          grepl('peu', base::tolower(.data$helplessness.3)) ~ 1,
+          grepl('mod.*r.*e', base::tolower(.data$helplessness.3)) ~ 2,
+          grepl('beaucoup', base::tolower(.data$helplessness.3)) ~ 3,
+          grepl('tout le temps', base::tolower(.data$helplessness.3)) ~ 4
         ),
         item4 = case_when(
-          grepl('du tout', base::tolower(helplessness.4)) ~ 0,
-          grepl('peu', base::tolower(helplessness.4)) ~ 1,
-          grepl('mod.*r.*e', base::tolower(helplessness.4)) ~ 2,
-          grepl('beaucoup', base::tolower(helplessness.4)) ~ 3,
-          grepl('tout le temps', base::tolower(helplessness.4)) ~ 4
+          grepl('du tout', base::tolower(.data$helplessness.4)) ~ 0,
+          grepl('peu', base::tolower(.data$helplessness.4)) ~ 1,
+          grepl('mod.*r.*e', base::tolower(.data$helplessness.4)) ~ 2,
+          grepl('beaucoup', base::tolower(.data$helplessness.4)) ~ 3,
+          grepl('tout le temps', base::tolower(.data$helplessness.4)) ~ 4
         ),
         item5 = case_when(
-          grepl('du tout', base::tolower(helplessness.5)) ~ 0,
-          grepl('peu', base::tolower(helplessness.5)) ~ 1,
-          grepl('mod.*r.*e', base::tolower(helplessness.5)) ~ 2,
-          grepl('beaucoup', base::tolower(helplessness.5)) ~ 3,
-          grepl('tout le temps', base::tolower(helplessness.5)) ~ 4
+          grepl('du tout', base::tolower(.data$helplessness.5)) ~ 0,
+          grepl('peu', base::tolower(.data$helplessness.5)) ~ 1,
+          grepl('mod.*r.*e', base::tolower(.data$helplessness.5)) ~ 2,
+          grepl('beaucoup', base::tolower(.data$helplessness.5)) ~ 3,
+          grepl('tout le temps', base::tolower(.data$helplessness.5)) ~ 4
         ),
         item6 = case_when(
-          grepl('du tout', base::tolower(magnification.6)) ~ 0,
-          grepl('peu', base::tolower(magnification.6)) ~ 1,
-          grepl('mod.*r.*e', base::tolower(magnification.6)) ~ 2,
-          grepl('beaucoup', base::tolower(magnification.6)) ~ 3,
-          grepl('tout le temps', base::tolower(magnification.6)) ~ 4
+          grepl('du tout', base::tolower(.data$magnification.6)) ~ 0,
+          grepl('peu', base::tolower(.data$magnification.6)) ~ 1,
+          grepl('mod.*r.*e', base::tolower(.data$magnification.6)) ~ 2,
+          grepl('beaucoup', base::tolower(.data$magnification.6)) ~ 3,
+          grepl('tout le temps', base::tolower(.data$magnification.6)) ~ 4
         ),
         item7 = case_when(
-          grepl('du tout', base::tolower(magnification.7)) ~ 0,
-          grepl('peu', base::tolower(magnification.7)) ~ 1,
-          grepl('mod.*r.*e', base::tolower(magnification.7)) ~ 2,
-          grepl('beaucoup', base::tolower(magnification.7)) ~ 3,
-          grepl('tout le temps', base::tolower(magnification.7)) ~ 4
+          grepl('du tout', base::tolower(.data$magnification.7)) ~ 0,
+          grepl('peu', base::tolower(.data$magnification.7)) ~ 1,
+          grepl('mod.*r.*e', base::tolower(.data$magnification.7)) ~ 2,
+          grepl('beaucoup', base::tolower(.data$magnification.7)) ~ 3,
+          grepl('tout le temps', base::tolower(.data$magnification.7)) ~ 4
         ),
         item8 = case_when(
-          grepl('du tout', base::tolower(rumination.8)) ~ 0,
-          grepl('peu', base::tolower(rumination.8)) ~ 1,
-          grepl('mod.*r.*e', base::tolower(rumination.8)) ~ 2,
-          grepl('beaucoup', base::tolower(rumination.8)) ~ 3,
-          grepl('tout le temps', base::tolower(rumination.8)) ~ 4
+          grepl('du tout', base::tolower(.data$rumination.8)) ~ 0,
+          grepl('peu', base::tolower(.data$rumination.8)) ~ 1,
+          grepl('mod.*r.*e', base::tolower(.data$rumination.8)) ~ 2,
+          grepl('beaucoup', base::tolower(.data$rumination.8)) ~ 3,
+          grepl('tout le temps', base::tolower(.data$rumination.8)) ~ 4
         ),
         item9 = case_when(
-          grepl('du tout', base::tolower(rumination.9)) ~ 0,
-          grepl('peu', base::tolower(rumination.9)) ~ 1,
-          grepl('mod.*r.*e', base::tolower(rumination.9)) ~ 2,
-          grepl('beaucoup', base::tolower(rumination.9)) ~ 3,
-          grepl('tout le temps', base::tolower(rumination.9)) ~ 4
+          grepl('du tout', base::tolower(.data$rumination.9)) ~ 0,
+          grepl('peu', base::tolower(.data$rumination.9)) ~ 1,
+          grepl('mod.*r.*e', base::tolower(.data$rumination.9)) ~ 2,
+          grepl('beaucoup', base::tolower(.data$rumination.9)) ~ 3,
+          grepl('tout le temps', base::tolower(.data$rumination.9)) ~ 4
         ),
         item10 = case_when(
-          grepl('du tout', base::tolower(rumination.10)) ~ 0,
-          grepl('peu', base::tolower(rumination.10)) ~ 1,
-          grepl('mod.*r.*e', base::tolower(rumination.10)) ~ 2,
-          grepl('beaucoup', base::tolower(rumination.10)) ~ 3,
-          grepl('tout le temps', base::tolower(rumination.10)) ~ 4
+          grepl('du tout', base::tolower(.data$rumination.10)) ~ 0,
+          grepl('peu', base::tolower(.data$rumination.10)) ~ 1,
+          grepl('mod.*r.*e', base::tolower(.data$rumination.10)) ~ 2,
+          grepl('beaucoup', base::tolower(.data$rumination.10)) ~ 3,
+          grepl('tout le temps', base::tolower(.data$rumination.10)) ~ 4
         ),
         item11 = case_when(
-          grepl('du tout', base::tolower(rumination.11)) ~ 0,
-          grepl('peu', base::tolower(rumination.11)) ~ 1,
-          grepl('mod.*r.*e', base::tolower(rumination.11)) ~ 2,
-          grepl('beaucoup', base::tolower(rumination.11)) ~ 3,
-          grepl('tout le temps', base::tolower(rumination.11)) ~ 4
+          grepl('du tout', base::tolower(.data$rumination.11)) ~ 0,
+          grepl('peu', base::tolower(.data$rumination.11)) ~ 1,
+          grepl('mod.*r.*e', base::tolower(.data$rumination.11)) ~ 2,
+          grepl('beaucoup', base::tolower(.data$rumination.11)) ~ 3,
+          grepl('tout le temps', base::tolower(.data$rumination.11)) ~ 4
         ),
         item12 = case_when(
-          grepl('du tout', base::tolower(helplessness.12)) ~ 0,
-          grepl('peu', base::tolower(helplessness.12)) ~ 1,
-          grepl('mod.*r.*e', base::tolower(helplessness.12)) ~ 2,
-          grepl('beaucoup', base::tolower(helplessness.12)) ~ 3,
-          grepl('tout le temps', base::tolower(helplessness.12)) ~ 4
+          grepl('du tout', base::tolower(.data$helplessness.12)) ~ 0,
+          grepl('peu', base::tolower(.data$helplessness.12)) ~ 1,
+          grepl('mod.*r.*e', base::tolower(.data$helplessness.12)) ~ 2,
+          grepl('beaucoup', base::tolower(.data$helplessness.12)) ~ 3,
+          grepl('tout le temps', base::tolower(.data$helplessness.12)) ~ 4
         ),
         item13 = case_when(
-          grepl('du tout', base::tolower(magnification.13)) ~ 0,
-          grepl('peu', base::tolower(magnification.13)) ~ 1,
-          grepl('mod.*r.*e', base::tolower(magnification.13)) ~ 2,
-          grepl('beaucoup', base::tolower(magnification.13)) ~ 3,
-          grepl('tout le temps', base::tolower(magnification.13)) ~ 4
+          grepl('du tout', base::tolower(.data$magnification.13)) ~ 0,
+          grepl('peu', base::tolower(.data$magnification.13)) ~ 1,
+          grepl('mod.*r.*e', base::tolower(.data$magnification.13)) ~ 2,
+          grepl('beaucoup', base::tolower(.data$magnification.13)) ~ 3,
+          grepl('tout le temps', base::tolower(.data$magnification.13)) ~ 4
         )
       ) %>%
       # Score the subscale scores
       dplyr::mutate(
-        scored.helplessness = item1 + item2 + item3 + item4 + item5 + item12,
-        scored.magnification = item6 + item7 + item13,
-        scored.rumination = item8 + item9 + item10 + item11,
-        pcs = scored.helplessness + scored.magnification + scored.rumination
+        scored.helplessness = .data$item1 + .data$item2 + .data$item3 + .data$item4 + .data$item5 + .data$item12,
+        scored.magnification = .data$item6 + .data$item7 + .data$item13,
+        scored.rumination = .data$item8 + .data$item9 + .data$item10 + .data$item11,
+        pcs = .data$scored.helplessness + .data$scored.magnification + .data$scored.rumination
       )
   }
 
@@ -332,11 +332,12 @@ score.pcs <- function(
   na_count <- .scored.pcs %>%
     dplyr::select(dplyr::contains("item")) %>%
     dplyr::summarise_all(
-      ~ sum(is.na(.))/length(.scored.pcs$id)) %>%
+      ~ sum(is.na(.))/n()
+      )%>%
     tidyr::pivot_longer(cols = 1:13,
                         names_to = 'item',
                         values_to = 'na_prop') %>%
-    filter(na_prop >= 0.5)
+    filter(.data$na_prop >= 0.5)
   if(length(na_count$na_prop) >= 1){
     base::warning("The following items have high proportions (>= 50%) of NA values.",
                   " Argument `cols` may not be set correctly. \n",
@@ -350,23 +351,23 @@ score.pcs <- function(
     dplyr::select(
       id,
       date,
-      helplessness.1,
-      helplessness.2,
-      helplessness.3,
-      helplessness.4,
-      helplessness.5,
-      magnification.6,
-      magnification.7,
-      rumination.8,
-      rumination.9,
-      rumination.10,
-      rumination.11,
-      helplessness.12,
-      magnification.13,
-      scored.helplessness,
-      scored.magnification,
-      scored.rumination,
-      pcs
+      .data$helplessness.1,
+      .data$helplessness.2,
+      .data$helplessness.3,
+      .data$helplessness.4,
+      .data$helplessness.5,
+      .data$magnification.6,
+      .data$magnification.7,
+      .data$rumination.8,
+      .data$rumination.9,
+      .data$rumination.10,
+      .data$rumination.11,
+      .data$helplessness.12,
+      .data$magnification.13,
+      .data$scored.helplessness,
+      .data$scored.magnification,
+      .data$scored.rumination,
+      .data$pcs
     )
 
 
@@ -396,6 +397,3 @@ score.pcs <- function(
 
   return(.scored.pcs)
 }
-
-
-?qhs::score.pcs

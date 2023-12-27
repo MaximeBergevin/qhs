@@ -88,160 +88,160 @@ score.bdi <- function(
       # Score individual questions
       dplyr::mutate(
         scored.sadness = dplyr::case_when(
-          base::grepl('do not feel', sadness) ~ 0,
-          base::grepl('much of the time', sadness) ~ 1,
-          base::grepl('all the time', sadness) ~ 2,
-          base::grepl('so sad', sadness) ~ 3,
+          base::grepl('do not feel', .data$sadness) ~ 0,
+          base::grepl('much of the time', .data$sadness) ~ 1,
+          base::grepl('all the time', .data$sadness) ~ 2,
+          base::grepl('so sad', .data$sadness) ~ 3,
         ),
         scored.pessimism = dplyr::case_when(
-          base::grepl('not discouraged', pessimism) ~ 0,
-          base::grepl('more discouraged', pessimism) ~ 1,
-          base::grepl('do not expect', pessimism) ~ 2,
-          base::grepl('future is hopeless', pessimism) ~ 3,
+          base::grepl('not discouraged', .data$pessimism) ~ 0,
+          base::grepl('more discouraged', .data$pessimism) ~ 1,
+          base::grepl('do not expect', .data$pessimism) ~ 2,
+          base::grepl('future is hopeless', .data$pessimism) ~ 3,
         ),
         scored.pastFailure = dplyr::case_when(
-          base::grepl('do not feel', pastFailure) ~ 0,
-          base::grepl('failed more', pastFailure) ~ 1,
-          base::grepl('lot of failures', pastFailure) ~ 2,
-          base::grepl('total failure', pastFailure) ~ 3,
+          base::grepl('do not feel', .data$pastFailure) ~ 0,
+          base::grepl('failed more', .data$pastFailure) ~ 1,
+          base::grepl('lot of failures', .data$pastFailure) ~ 2,
+          base::grepl('total failure', .data$pastFailure) ~ 3,
         ),
         scored.lossPleasure = dplyr::case_when(
-          base::grepl('as much pleasure', lossPleasure) ~ 0,
-          base::grepl('as much as I used to', lossPleasure) ~ 1,
-          base::grepl('very little pleasure', lossPleasure) ~ 2,
-          base::grepl('any pleasure', lossPleasure) ~ 3,
+          base::grepl('as much pleasure', .data$lossPleasure) ~ 0,
+          base::grepl('as much as I used to', .data$lossPleasure) ~ 1,
+          base::grepl('very little pleasure', .data$lossPleasure) ~ 2,
+          base::grepl('any pleasure', .data$lossPleasure) ~ 3,
         ),
         scored.guiltyFeeling = dplyr::case_when(
-          base::grepl('particularly', guiltyFeeling) ~ 0,
-          base::grepl('over many things', guiltyFeeling) ~ 1,
-          base::grepl('most of the time', guiltyFeeling) ~ 2,
-          base::grepl('all of the time', guiltyFeeling) ~ 3,
+          base::grepl('particularly', .data$guiltyFeeling) ~ 0,
+          base::grepl('over many things', .data$guiltyFeeling) ~ 1,
+          base::grepl('most of the time', .data$guiltyFeeling) ~ 2,
+          base::grepl('all of the time', .data$guiltyFeeling) ~ 3,
         ),
         scored.punishment = dplyr::case_when(
-          base::grepl("don't feel", punishment) ~ 0,
-          base::grepl('do not feel', punishment) ~ 0,
-          base::grepl('may be', punishment) ~ 1,
-          base::grepl('expect to be', punishment) ~ 2,
-          base::grepl('am being', punishment) ~ 3,
+          base::grepl("don't feel", .data$punishment) ~ 0,
+          base::grepl('do not feel', .data$punishment) ~ 0,
+          base::grepl('may be', .data$punishment) ~ 1,
+          base::grepl('expect to be', .data$punishment) ~ 2,
+          base::grepl('am being', .data$punishment) ~ 3,
         ),
         scored.selfDislike = dplyr::case_when(
-          base::grepl('feel the same', selfDislike) ~ 0,
-          base:: grepl('lost confidence', selfDislike) ~ 1,
-          base:: grepl('disappointed', selfDislike) ~ 2,
-          base:: grepl('dislike myself', selfDislike) ~ 3,
+          base::grepl('feel the same', .data$selfDislike) ~ 0,
+          base:: grepl('lost confidence', .data$selfDislike) ~ 1,
+          base:: grepl('disappointed', .data$selfDislike) ~ 2,
+          base:: grepl('dislike myself', .data$selfDislike) ~ 3,
         ),
         scored.selfCriticalness = dplyr::case_when(
-          base::grepl('or blame', selfCriticalness) ~ 0,
-          base::grepl('more critical', selfCriticalness) ~ 1,
-          base::grepl('for all of my faults', selfCriticalness) ~ 2,
-          base::grepl('for everything', selfCriticalness) ~ 3,
+          base::grepl('or blame', .data$selfCriticalness) ~ 0,
+          base::grepl('more critical', .data$selfCriticalness) ~ 1,
+          base::grepl('for all of my faults', .data$selfCriticalness) ~ 2,
+          base::grepl('for everything', .data$selfCriticalness) ~ 3,
         ),
         scored.suicidalThoughts = dplyr::case_when(
-          base::grepl('have any', suicidalThoughts) ~ 0,
-          base::grepl('have thoughts', suicidalThoughts) ~ 1,
-          base::grepl('would like to', suicidalThoughts) ~ 2,
-          base::grepl('would kill', suicidalThoughts) ~ 3,
+          base::grepl('have any', .data$suicidalThoughts) ~ 0,
+          base::grepl('have thoughts', .data$suicidalThoughts) ~ 1,
+          base::grepl('would like to', .data$suicidalThoughts) ~ 2,
+          base::grepl('would kill', .data$suicidalThoughts) ~ 3,
         ),
         scored.crying = dplyr::case_when(
-          base::grepl('anymore', crying) ~ 0,
-          base::grepl('more than', crying) ~ 1,
-          base::grepl('over every', crying) ~ 2,
-          base::grepl('feel like crying', crying) ~ 3
+          base::grepl('anymore', .data$crying) ~ 0,
+          base::grepl('more than', .data$crying) ~ 1,
+          base::grepl('over every', .data$crying) ~ 2,
+          base::grepl('feel like crying', .data$crying) ~ 3
       ),
       scored.agitation = dplyr::case_when(
-        base::grepl('no more', agitation) ~ 0,
-        base::grepl('feel more', agitation) ~ 1,
-        base::grepl('hard to stay still', agitation) ~ 2,
-        base::grepl('have to keep moving', agitation) ~ 3
+        base::grepl('no more', .data$agitation) ~ 0,
+        base::grepl('feel more', .data$agitation) ~ 1,
+        base::grepl('hard to stay still', .data$agitation) ~ 2,
+        base::grepl('have to keep moving', .data$agitation) ~ 3
       ),
       scored.lossInterest = dplyr::case_when(
-        base::grepl('not lost', lossInterest) ~ 0,
-        base::grepl('less interested', lossInterest) ~ 1,
-        base::grepl('lost most', lossInterest) ~ 2,
-        base::grepl('hard to get interested', lossInterest) ~ 3
+        base::grepl('not lost', .data$lossInterest) ~ 0,
+        base::grepl('less interested', .data$lossInterest) ~ 1,
+        base::grepl('lost most', .data$lossInterest) ~ 2,
+        base::grepl('hard to get interested', .data$lossInterest) ~ 3
       ),
       scored.indecisiveness = dplyr::case_when(
-        base::grepl('as well as ever', indecisiveness) ~ 0,
-        base::grepl('more difficult', indecisiveness) ~ 1,
-        base::grepl('greater difficulty', indecisiveness) ~ 2,
-        base::grepl('trouble making', indecisiveness) ~ 3
+        base::grepl('as well as ever', .data$indecisiveness) ~ 0,
+        base::grepl('more difficult', .data$indecisiveness) ~ 1,
+        base::grepl('greater difficulty', .data$indecisiveness) ~ 2,
+        base::grepl('trouble making', .data$indecisiveness) ~ 3
       ),
       scored.worthlessness = dplyr::case_when(
-        base::grepl('do.*n.*t feel', worthlessness) ~ 0,
-        base::grepl('do.*n.*t consider', worthlessness) ~ 1,
-        base::grepl('feel more', worthlessness) ~ 2,
-        base::grepl('feel utterly', worthlessness) ~ 3
+        base::grepl('do.*n.*t feel', .data$worthlessness) ~ 0,
+        base::grepl('do.*n.*t consider', .data$worthlessness) ~ 1,
+        base::grepl('feel more', .data$worthlessness) ~ 2,
+        base::grepl('feel utterly', .data$worthlessness) ~ 3
       ),
       scored.lossEnergy = dplyr::case_when(
-        base::grepl('have as much', lossEnergy) ~ 0,
-        base::grepl('have less', lossEnergy) ~ 1,
-        base::grepl('to do very much', lossEnergy) ~ 2,
-        base::grepl('to do anything', lossEnergy) ~ 3
+        base::grepl('have as much', .data$lossEnergy) ~ 0,
+        base::grepl('have less', .data$lossEnergy) ~ 1,
+        base::grepl('to do very much', .data$lossEnergy) ~ 2,
+        base::grepl('to do anything', .data$lossEnergy) ~ 3
       ),
       scored.changeSleep = dplyr::case_when(
-        base::grepl('have not', changeSleep) ~ 0,
-        base::grepl('somewhat', changeSleep) ~ 1,
-        base::grepl('a lot', changeSleep) ~ 2,
-        base::grepl('most of the day', changeSleep) ~ 3,
-        base::grepl('wake up', changeSleep) ~ 3
+        base::grepl('have not', .data$changeSleep) ~ 0,
+        base::grepl('somewhat', .data$changeSleep) ~ 1,
+        base::grepl('a lot', .data$changeSleep) ~ 2,
+        base::grepl('most of the day', .data$changeSleep) ~ 3,
+        base::grepl('wake up', .data$changeSleep) ~ 3
       ),
       scored.irritability = dplyr::case_when(
-        base::grepl('no more', irritability) ~ 0,
-        base::grepl('am more', irritability) ~ 1,
-        base::grepl('much more', irritability) ~ 2,
-        base::grepl('all the time', irritability) ~ 3
+        base::grepl('no more', .data$irritability) ~ 0,
+        base::grepl('am more', .data$irritability) ~ 1,
+        base::grepl('much more', .data$irritability) ~ 2,
+        base::grepl('all the time', .data$irritability) ~ 3
       ),
       scored.changeAppetite = dplyr::case_when(
-        base::grepl('have not', changeAppetite) ~ 0,
-        base::grepl('somewhat', changeAppetite) ~ 1,
-        base::grepl('is much', changeAppetite) ~ 2,
-        base::grepl('no appetite', changeAppetite) ~ 3,
-        base::grepl('all the time', changeAppetite) ~ 3
+        base::grepl('have not', .data$changeAppetite) ~ 0,
+        base::grepl('somewhat', .data$changeAppetite) ~ 1,
+        base::grepl('is much', .data$changeAppetite) ~ 2,
+        base::grepl('no appetite', .data$changeAppetite) ~ 3,
+        base::grepl('all the time', .data$changeAppetite) ~ 3
       ),
       scored.concentrationDifficulty = dplyr::case_when(
-        base::grepl('as well as ever', concentrationDifficulty) ~ 0,
-        base::grepl('can.*t concentrate as well', concentrationDifficulty) ~ 1,
-        base::grepl('hard to keep', concentrationDifficulty) ~ 2,
-        base::grepl('on anything', concentrationDifficulty) ~ 3,
+        base::grepl('as well as ever', .data$concentrationDifficulty) ~ 0,
+        base::grepl('can.*t concentrate as well', .data$concentrationDifficulty) ~ 1,
+        base::grepl('hard to keep', .data$concentrationDifficulty) ~ 2,
+        base::grepl('on anything', .data$concentrationDifficulty) ~ 3,
       ),
       scored.tiredness = dplyr::case_when(
-        base::grepl('no more', tiredness) ~ 0,
-        base::grepl('more tired', tiredness) ~ 1,
-        base::grepl('a lot of', tiredness) ~ 2,
-        base::grepl('most of', tiredness) ~ 3,
+        base::grepl('no more', .data$tiredness) ~ 0,
+        base::grepl('more tired', .data$tiredness) ~ 1,
+        base::grepl('a lot of', .data$tiredness) ~ 2,
+        base::grepl('most of', .data$tiredness) ~ 3,
       ),
       scored.interestSex = dplyr::case_when(
-        base::grepl('not noticed', interestSex) ~ 0,
-        base::grepl('.*m less', interestSex) ~ 1,
-        base::grepl('much less', interestSex) ~ 2,
-        base::grepl('lost', interestSex) ~ 3,
+        base::grepl('not noticed', .data$interestSex) ~ 0,
+        base::grepl('.*m less', .data$interestSex) ~ 1,
+        base::grepl('much less', .data$interestSex) ~ 2,
+        base::grepl('lost', .data$interestSex) ~ 3,
         )
       )
     # Sum of every observations' answers (final score)
     .scored.bdi <- .scored.bdi %>%
       dplyr::mutate(
         scored.bdi =
-          base::ifelse(is.na(scored.sadness),0,scored.sadness) +
-          base::ifelse(is.na(scored.pessimism),0,scored.pessimism) +
-          base::ifelse(is.na(scored.pastFailure),0,scored.pastFailure) +
-          base::ifelse(is.na(scored.lossPleasure),0,scored.lossPleasure) +
-          base::ifelse(is.na(scored.guiltyFeeling),0,scored.guiltyFeeling) +
-          base::ifelse(is.na(scored.punishment),0,scored.punishment) +
-          base::ifelse(is.na(scored.selfDislike),0,scored.selfDislike) +
-          base::ifelse(is.na(scored.selfCriticalness),0,scored.selfCriticalness) +
-          base::ifelse(is.na(scored.suicidalThoughts),0,scored.suicidalThoughts) +
-          base::ifelse(is.na(scored.crying),0,scored.crying) +
-          base::ifelse(is.na(scored.agitation),0,scored.agitation) +
-          base::ifelse(is.na(scored.lossInterest),0,scored.lossInterest) +
-          base::ifelse(is.na(scored.indecisiveness),0,scored.indecisiveness) +
-          base::ifelse(is.na(scored.worthlessness),0,scored.worthlessness) +
-          base::ifelse(is.na(scored.lossEnergy),0,scored.lossEnergy) +
-          base::ifelse(is.na(scored.changeSleep),0,scored.changeSleep) +
-          base::ifelse(is.na(scored.irritability),0,scored.irritability) +
-          base::ifelse(is.na(scored.changeAppetite),0,scored.changeAppetite) +
-          base::ifelse(is.na(scored.concentrationDifficulty),0,scored.concentrationDifficulty) +
-          base::ifelse(is.na(scored.tiredness),0,scored.tiredness) +
-          base::ifelse(is.na(scored.interestSex),0,scored.interestSex)
+          base::ifelse(is.na(.data$scored.sadness),0,.data$scored.sadness) +
+          base::ifelse(is.na(.data$scored.pessimism),0,.data$scored.pessimism) +
+          base::ifelse(is.na(.data$scored.pastFailure),0,.data$scored.pastFailure) +
+          base::ifelse(is.na(.data$scored.lossPleasure),0,.data$scored.lossPleasure) +
+          base::ifelse(is.na(.data$scored.guiltyFeeling),0,.data$scored.guiltyFeeling) +
+          base::ifelse(is.na(.data$scored.punishment),0,.data$scored.punishment) +
+          base::ifelse(is.na(.data$scored.selfDislike),0,.data$scored.selfDislike) +
+          base::ifelse(is.na(.data$scored.selfCriticalness),0,.data$scored.selfCriticalness) +
+          base::ifelse(is.na(.data$scored.suicidalThoughts),0,.data$scored.suicidalThoughts) +
+          base::ifelse(is.na(.data$scored.crying),0,.data$scored.crying) +
+          base::ifelse(is.na(.data$scored.agitation),0,.data$scored.agitation) +
+          base::ifelse(is.na(.data$scored.lossInterest),0,.data$scored.lossInterest) +
+          base::ifelse(is.na(.data$scored.indecisiveness),0,.data$scored.indecisiveness) +
+          base::ifelse(is.na(.data$scored.worthlessness),0,.data$scored.worthlessness) +
+          base::ifelse(is.na(.data$scored.lossEnergy),0,.data$scored.lossEnergy) +
+          base::ifelse(is.na(.data$scored.changeSleep),0,.data$scored.changeSleep) +
+          base::ifelse(is.na(.data$scored.irritability),0,.data$scored.irritability) +
+          base::ifelse(is.na(.data$scored.changeAppetite),0,.data$scored.changeAppetite) +
+          base::ifelse(is.na(.data$scored.concentrationDifficulty),0,.data$scored.concentrationDifficulty) +
+          base::ifelse(is.na(.data$scored.tiredness),0,.data$scored.tiredness) +
+          base::ifelse(is.na(.data$scored.interestSex),0,.data$scored.interestSex)
       )
 
 
@@ -250,28 +250,28 @@ score.bdi <- function(
     dplyr::select(
       id,
       date,
-      sadness, scored.sadness,
-      pessimism, scored.pessimism,
-      pastFailure, scored.pastFailure,
-      lossPleasure, scored.lossPleasure,
-      guiltyFeeling, scored.guiltyFeeling,
-      punishment, scored.punishment,
-      selfDislike, scored.selfDislike,
-      selfCriticalness, scored.selfCriticalness,
-      suicidalThoughts, scored.suicidalThoughts,
-      crying, scored.crying,
-      agitation, scored.agitation,
-      lossInterest, scored.lossInterest,
-      indecisiveness, scored.indecisiveness,
-      worthlessness, scored.worthlessness,
-      lossEnergy, scored.lossEnergy,
-      changeSleep, scored.changeSleep,
-      irritability, scored.irritability,
-      changeAppetite, scored.changeAppetite,
-      concentrationDifficulty, scored.concentrationDifficulty,
-      tiredness, scored.tiredness,
-      interestSex, scored.interestSex,
-      scored.bdi
+      .data$sadness, .data$scored.sadness,
+      .data$pessimism, .data$scored.pessimism,
+      .data$pastFailure, .data$scored.pastFailure,
+      .data$lossPleasure, .data$scored.lossPleasure,
+      .data$guiltyFeeling, .data$scored.guiltyFeeling,
+      .data$punishment, .data$scored.punishment,
+      .data$selfDislike, .data$scored.selfDislike,
+      .data$selfCriticalness, .data$scored.selfCriticalness,
+      .data$suicidalThoughts, .data$scored.suicidalThoughts,
+      .data$crying, .data$scored.crying,
+      .data$agitation, .data$scored.agitation,
+      .data$lossInterest, .data$scored.lossInterest,
+      .data$indecisiveness, .data$scored.indecisiveness,
+      .data$worthlessness, .data$scored.worthlessness,
+      .data$lossEnergy, .data$scored.lossEnergy,
+      .data$changeSleep, .data$scored.changeSleep,
+      .data$irritability, .data$scored.irritability,
+      .data$changeAppetite, .data$scored.changeAppetite,
+      .data$concentrationDifficulty, .data$scored.concentrationDifficulty,
+      .data$tiredness, .data$scored.tiredness,
+      .data$interestSex, .data$scored.interestSex,
+      .data$scored.bdi
     )
 
 
@@ -281,11 +281,12 @@ score.bdi <- function(
   na_count <- .scored.bdi %>%
     dplyr::select(dplyr::contains("scored.")) %>%
     dplyr::summarise_all(
-      ~ sum(is.na(.))/length(.scored.bdi$id)) %>%
+      ~ sum(is.na(.))/n()
+      )%>%
     tidyr::pivot_longer(cols = 2:21,
                         names_to = 'item',
                         values_to = 'na_prop') %>%
-    filter(na_prop >= 0.5)
+    filter(.data$na_prop >= 0.5)
   if(length(na_count$na_prop) >= 1){
     base::warning("The following items have high proportions (>= 50%) of NA values.",
                   " Argument `cols` may not be set correctly. \n",
@@ -298,27 +299,27 @@ score.bdi <- function(
   # Keep original responses if keepResponses == TRUE
   if(keepResponses == FALSE){
     .scored.bdi <- .scored.bdi %>%
-      dplyr::select(- sadness,
-                    - pessimism,
-                    - pastFailure,
-                    - lossPleasure,
-                    - guiltyFeeling,
-                    - punishment,
-                    - selfDislike,
-                    - selfCriticalness,
-                    - suicidalThoughts,
-                    - crying,
-                    - agitation,
-                    - lossInterest,
-                    - indecisiveness,
-                    - worthlessness,
-                    - lossEnergy,
-                    - changeSleep,
-                    - irritability,
-                    - changeAppetite,
-                    - concentrationDifficulty,
-                    - tiredness,
-                    - interestSex
+      dplyr::select(- .data$sadness,
+                    - .data$pessimism,
+                    - .data$pastFailure,
+                    - .data$lossPleasure,
+                    - .data$guiltyFeeling,
+                    - .data$punishment,
+                    - .data$selfDislike,
+                    - .data$selfCriticalness,
+                    - .data$suicidalThoughts,
+                    - .data$crying,
+                    - .data$agitation,
+                    - .data$lossInterest,
+                    - .data$indecisiveness,
+                    - .data$worthlessness,
+                    - .data$lossEnergy,
+                    - .data$changeSleep,
+                    - .data$irritability,
+                    - .data$changeAppetite,
+                    - .data$concentrationDifficulty,
+                    - .data$tiredness,
+                    - .data$interestSex
       )
   }
 
@@ -327,27 +328,27 @@ score.bdi <- function(
   # Keep item scoring if keepScoring == TRUE
   if(keepScoring == FALSE){
     .scored.bdi <- .scored.bdi %>%
-      dplyr::select(- scored.sadness,
-                    - scored.pessimism,
-                    - scored.pastFailure,
-                    - scored.lossPleasure,
-                    - scored.guiltyFeeling,
-                    - scored.punishment,
-                    - scored.selfDislike,
-                    - scored.selfCriticalness,
-                    - scored.suicidalThoughts,
-                    - scored.crying,
-                    - scored.agitation,
-                    - scored.lossInterest,
-                    - scored.indecisiveness,
-                    - scored.worthlessness,
-                    - scored.lossEnergy,
-                    - scored.changeSleep,
-                    - scored.irritability,
-                    - scored.changeAppetite,
-                    - scored.concentrationDifficulty,
-                    - scored.tiredness,
-                    - scored.interestSex
+      dplyr::select(- .data$scored.sadness,
+                    - .data$scored.pessimism,
+                    - .data$scored.pastFailure,
+                    - .data$scored.lossPleasure,
+                    - .data$scored.guiltyFeeling,
+                    - .data$scored.punishment,
+                    - .data$scored.selfDislike,
+                    - .data$scored.selfCriticalness,
+                    - .data$scored.suicidalThoughts,
+                    - .data$scored.crying,
+                    - .data$scored.agitation,
+                    - .data$scored.lossInterest,
+                    - .data$scored.indecisiveness,
+                    - .data$scored.worthlessness,
+                    - .data$scored.lossEnergy,
+                    - .data$scored.changeSleep,
+                    - .data$scored.irritability,
+                    - .data$scored.changeAppetite,
+                    - .data$scored.concentrationDifficulty,
+                    - .data$scored.tiredness,
+                    - .data$scored.interestSex
       )
   }
 

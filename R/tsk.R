@@ -112,76 +112,77 @@ score.tsk <- function(
       # Score individual questions
       dplyr::mutate(
         scored.1 = case_when(
-          grepl('strongly disagree', base::tolower(item.1)) ~ 1,
-          grepl('somewhat disagree', base::tolower(item.1)) ~ 2,
-          grepl('somewhat agree', base::tolower(item.1)) ~ 3,
-          grepl('strongly agree', base::tolower(item.1)) ~ 4
+          grepl('strongly disagree', base::tolower(.data$item.1)) ~ 1,
+          grepl('somewhat disagree', base::tolower(.data$item.1)) ~ 2,
+          grepl('somewhat agree', base::tolower(.data$item.1)) ~ 3,
+          grepl('strongly agree', base::tolower(.data$item.1)) ~ 4
           ),
         scored.2 = case_when(
-          grepl('strongly disagree', base::tolower(item.2)) ~ 1,
-          grepl('somewhat disagree', base::tolower(item.2)) ~ 2,
-          grepl('somewhat agree', base::tolower(item.2)) ~ 3,
-          grepl('strongly agree', base::tolower(item.2)) ~ 4
+          grepl('strongly disagree', base::tolower(.data$item.2)) ~ 1,
+          grepl('somewhat disagree', base::tolower(.data$item.2)) ~ 2,
+          grepl('somewhat agree', base::tolower(.data$item.2)) ~ 3,
+          grepl('strongly agree', base::tolower(.data$item.2)) ~ 4
         ),
         scored.3 = case_when(
-          grepl('strongly disagree', base::tolower(item.3)) ~ 1,
-          grepl('somewhat disagree', base::tolower(item.3)) ~ 2,
-          grepl('somewhat agree', base::tolower(item.3)) ~ 3,
-          grepl('strongly agree', base::tolower(item.3)) ~ 4
+          grepl('strongly disagree', base::tolower(.data$item.3)) ~ 1,
+          grepl('somewhat disagree', base::tolower(.data$item.3)) ~ 2,
+          grepl('somewhat agree', base::tolower(.data$item.3)) ~ 3,
+          grepl('strongly agree', base::tolower(.data$item.3)) ~ 4
         ),
         scored.4 = case_when(
-          grepl('strongly disagree', base::tolower(item.4)) ~ 1,
-          grepl('somewhat disagree', base::tolower(item.4)) ~ 2,
-          grepl('somewhat agree', base::tolower(item.4)) ~ 3,
-          grepl('strongly agree', base::tolower(item.4)) ~ 4
+          grepl('strongly disagree', base::tolower(.data$item.4)) ~ 1,
+          grepl('somewhat disagree', base::tolower(.data$item.4)) ~ 2,
+          grepl('somewhat agree', base::tolower(.data$item.4)) ~ 3,
+          grepl('strongly agree', base::tolower(.data$item.4)) ~ 4
         ),
         scored.5 = case_when(
-          grepl('strongly disagree', base::tolower(item.5)) ~ 1,
-          grepl('somewhat disagree', base::tolower(item.5)) ~ 2,
-          grepl('somewhat agree', base::tolower(item.5)) ~ 3,
-          grepl('strongly agree', base::tolower(item.5)) ~ 4
+          grepl('strongly disagree', base::tolower(.data$item.5)) ~ 1,
+          grepl('somewhat disagree', base::tolower(.data$item.5)) ~ 2,
+          grepl('somewhat agree', base::tolower(.data$item.5)) ~ 3,
+          grepl('strongly agree', base::tolower(.data$item.5)) ~ 4
         ),
         scored.6 = case_when(
-          grepl('strongly disagree', base::tolower(item.6)) ~ 1,
-          grepl('somewhat disagree', base::tolower(item.6)) ~ 2,
-          grepl('somewhat agree', base::tolower(item.6)) ~ 3,
-          grepl('strongly agree', base::tolower(item.6)) ~ 4
+          grepl('strongly disagree', base::tolower(.data$item.6)) ~ 1,
+          grepl('somewhat disagree', base::tolower(.data$item.6)) ~ 2,
+          grepl('somewhat agree', base::tolower(.data$item.6)) ~ 3,
+          grepl('strongly agree', base::tolower(.data$item.6)) ~ 4
         ),
         scored.7 = case_when(
-          grepl('strongly disagree', base::tolower(item.7)) ~ 1,
-          grepl('somewhat disagree', base::tolower(item.7)) ~ 2,
-          grepl('somewhat agree', base::tolower(item.7)) ~ 3,
-          grepl('strongly agree', base::tolower(item.7)) ~ 4
+          grepl('strongly disagree', base::tolower(.data$item.7)) ~ 1,
+          grepl('somewhat disagree', base::tolower(.data$item.7)) ~ 2,
+          grepl('somewhat agree', base::tolower(.data$item.7)) ~ 3,
+          grepl('strongly agree', base::tolower(.data$item.7)) ~ 4
         ),
         scored.8 = case_when(
-          grepl('strongly disagree', base::tolower(item.8)) ~ 1,
-          grepl('somewhat disagree', base::tolower(item.8)) ~ 2,
-          grepl('somewhat agree', base::tolower(item.8)) ~ 3,
-          grepl('strongly agree', base::tolower(item.8)) ~ 4
+          grepl('strongly disagree', base::tolower(.data$item.8)) ~ 1,
+          grepl('somewhat disagree', base::tolower(.data$item.8)) ~ 2,
+          grepl('somewhat agree', base::tolower(.data$item.8)) ~ 3,
+          grepl('strongly agree', base::tolower(.data$item.8)) ~ 4
         ),
         scored.9 = case_when(
-          grepl('strongly disagree', base::tolower(item.9)) ~ 1,
-          grepl('somewhat disagree', base::tolower(item.9)) ~ 2,
-          grepl('somewhat agree', base::tolower(item.9)) ~ 3,
-          grepl('strongly agree', base::tolower(item.9)) ~ 4
+          grepl('strongly disagree', base::tolower(.data$item.9)) ~ 1,
+          grepl('somewhat disagree', base::tolower(.data$item.9)) ~ 2,
+          grepl('somewhat agree', base::tolower(.data$item.9)) ~ 3,
+          grepl('strongly agree', base::tolower(.data$item.9)) ~ 4
         ),
         scored.10 = case_when(
-          grepl('strongly disagree', base::tolower(item.10)) ~ 1,
-          grepl('somewhat disagree', base::tolower(item.10)) ~ 2,
-          grepl('somewhat agree', base::tolower(item.10)) ~ 3,
-          grepl('strongly agree', base::tolower(item.10)) ~ 4
+          grepl('strongly disagree', base::tolower(.data$item.10)) ~ 1,
+          grepl('somewhat disagree', base::tolower(.data$item.10)) ~ 2,
+          grepl('somewhat agree', base::tolower(.data$item.10)) ~ 3,
+          grepl('strongly agree', base::tolower(.data$item.10)) ~ 4
         ),
         scored.11 = case_when(
-          grepl('strongly disagree', base::tolower(item.11)) ~ 1,
-          grepl('somewhat disagree', base::tolower(item.11)) ~ 2,
-          grepl('somewhat agree', base::tolower(item.11)) ~ 3,
-          grepl('strongly agree', base::tolower(item.11)) ~ 4
+          grepl('strongly disagree', base::tolower(.data$item.11)) ~ 1,
+          grepl('somewhat disagree', base::tolower(.data$item.11)) ~ 2,
+          grepl('somewhat agree', base::tolower(.data$item.11)) ~ 3,
+          grepl('strongly agree', base::tolower(.data$item.11)) ~ 4
           )
         ) %>%
       # Score the subscale scores
       dplyr::mutate(
-        tsk = scored.1 + scored.2 + scored.3 + scored.4 + scored.5 + scored.6 +
-              scored.7 + scored.8 + scored.9 + scored.10 + scored.11
+        tsk = .data$scored.1 + .data$scored.2 + .data$scored.3 + .data$scored.4 +
+          .data$scored.5 + .data$scored.6 + .data$scored.7 + .data$scored.8 +
+          .data$scored.9 + .data$scored.10 + .data$scored.11
       )
   }
 
@@ -210,76 +211,77 @@ score.tsk <- function(
       # Score individual questions
       dplyr::mutate(
         scored.1 = case_when(
-          grepl('fortement .* accord', base::tolower(item.1)) ~ 4,
-          grepl('quelque peu .* accord', base::tolower(item.1)) ~ 3,
-          grepl('quelque peu', base::tolower(item.1)) ~ 2,
-          grepl('fortement', base::tolower(item.1)) ~ 1
+          grepl('fortement .* accord', base::tolower(.data$item.1)) ~ 4,
+          grepl('quelque peu .* accord', base::tolower(.data$item.1)) ~ 3,
+          grepl('quelque peu', base::tolower(.data$item.1)) ~ 2,
+          grepl('fortement', base::tolower(.data$item.1)) ~ 1
         ),
         scored.2 = case_when(
-          grepl('fortement .* accord', base::tolower(item.2)) ~ 4,
-          grepl('quelque peu .* accord', base::tolower(item.2)) ~ 3,
-          grepl('quelque peu', base::tolower(item.2)) ~ 2,
-          grepl('fortement', base::tolower(item.2)) ~ 1
+          grepl('fortement .* accord', base::tolower(.data$item.2)) ~ 4,
+          grepl('quelque peu .* accord', base::tolower(.data$item.2)) ~ 3,
+          grepl('quelque peu', base::tolower(.data$item.2)) ~ 2,
+          grepl('fortement', base::tolower(.data$item.2)) ~ 1
         ),
         scored.3 = case_when(
-          grepl('fortement .* accord', base::tolower(item.3)) ~ 4,
-          grepl('quelque peu .* accord', base::tolower(item.3)) ~ 3,
-          grepl('quelque peu', base::tolower(item.3)) ~ 2,
-          grepl('fortement', base::tolower(item.3)) ~ 1
+          grepl('fortement .* accord', base::tolower(.data$item.3)) ~ 4,
+          grepl('quelque peu .* accord', base::tolower(.data$item.3)) ~ 3,
+          grepl('quelque peu', base::tolower(.data$item.3)) ~ 2,
+          grepl('fortement', base::tolower(.data$item.3)) ~ 1
         ),
         scored.4 = case_when(
-          grepl('fortement .* accord', base::tolower(item.4)) ~ 4,
-          grepl('quelque peu .* accord', base::tolower(item.4)) ~ 3,
-          grepl('quelque peu', base::tolower(item.4)) ~ 2,
-          grepl('fortement', base::tolower(item.4)) ~ 1
+          grepl('fortement .* accord', base::tolower(.data$item.4)) ~ 4,
+          grepl('quelque peu .* accord', base::tolower(.data$item.4)) ~ 3,
+          grepl('quelque peu', base::tolower(.data$item.4)) ~ 2,
+          grepl('fortement', base::tolower(.data$item.4)) ~ 1
         ),
         scored.5 = case_when(
-          grepl('fortement .* accord', base::tolower(item.5)) ~ 4,
-          grepl('quelque peu .* accord', base::tolower(item.5)) ~ 3,
-          grepl('quelque peu', base::tolower(item.5)) ~ 2,
-          grepl('fortement', base::tolower(item.5)) ~ 1
+          grepl('fortement .* accord', base::tolower(.data$item.5)) ~ 4,
+          grepl('quelque peu .* accord', base::tolower(.data$item.5)) ~ 3,
+          grepl('quelque peu', base::tolower(.data$item.5)) ~ 2,
+          grepl('fortement', base::tolower(.data$item.5)) ~ 1
         ),
         scored.6 = case_when(
-          grepl('fortement .* accord', base::tolower(item.6)) ~ 4,
-          grepl('quelque peu .* accord', base::tolower(item.6)) ~ 3,
-          grepl('quelque peu', base::tolower(item.6)) ~ 2,
-          grepl('fortement', base::tolower(item.6)) ~ 1
+          grepl('fortement .* accord', base::tolower(.data$item.6)) ~ 4,
+          grepl('quelque peu .* accord', base::tolower(.data$item.6)) ~ 3,
+          grepl('quelque peu', base::tolower(.data$item.6)) ~ 2,
+          grepl('fortement', base::tolower(.data$item.6)) ~ 1
         ),
         scored.7 = case_when(
-          grepl('fortement .* accord', base::tolower(item.7)) ~ 4,
-          grepl('quelque peu .* accord', base::tolower(item.7)) ~ 3,
-          grepl('quelque peu', base::tolower(item.7)) ~ 2,
-          grepl('fortement', base::tolower(item.7)) ~ 1
+          grepl('fortement .* accord', base::tolower(.data$item.7)) ~ 4,
+          grepl('quelque peu .* accord', base::tolower(.data$item.7)) ~ 3,
+          grepl('quelque peu', base::tolower(.data$item.7)) ~ 2,
+          grepl('fortement', base::tolower(.data$item.7)) ~ 1
         ),
         scored.8 = case_when(
-          grepl('fortement .* accord', base::tolower(item.8)) ~ 4,
-          grepl('quelque peu .* accord', base::tolower(item.8)) ~ 3,
-          grepl('quelque peu', base::tolower(item.8)) ~ 2,
-          grepl('fortement', base::tolower(item.8)) ~ 1
+          grepl('fortement .* accord', base::tolower(.data$item.8)) ~ 4,
+          grepl('quelque peu .* accord', base::tolower(.data$item.8)) ~ 3,
+          grepl('quelque peu', base::tolower(.data$item.8)) ~ 2,
+          grepl('fortement', base::tolower(.data$item.8)) ~ 1
         ),
         scored.9 = case_when(
-          grepl('fortement .* accord', base::tolower(item.9)) ~ 4,
-          grepl('quelque peu .* accord', base::tolower(item.9)) ~ 3,
-          grepl('quelque peu', base::tolower(item.9)) ~ 2,
-          grepl('fortement', base::tolower(item.9)) ~ 1
+          grepl('fortement .* accord', base::tolower(.data$item.9)) ~ 4,
+          grepl('quelque peu .* accord', base::tolower(.data$item.9)) ~ 3,
+          grepl('quelque peu', base::tolower(.data$item.9)) ~ 2,
+          grepl('fortement', base::tolower(.data$item.9)) ~ 1
         ),
         scored.10 = case_when(
-          grepl('fortement .* accord', base::tolower(item.10)) ~ 4,
-          grepl('quelque peu .* accord', base::tolower(item.10)) ~ 3,
-          grepl('quelque peu', base::tolower(item.10)) ~ 2,
-          grepl('fortement', base::tolower(item.10)) ~ 1
+          grepl('fortement .* accord', base::tolower(.data$item.10)) ~ 4,
+          grepl('quelque peu .* accord', base::tolower(.data$item.10)) ~ 3,
+          grepl('quelque peu', base::tolower(.data$item.10)) ~ 2,
+          grepl('fortement', base::tolower(.data$item.10)) ~ 1
         ),
         scored.11 = case_when(
-          grepl('fortement .* accord', base::tolower(item.11)) ~ 4,
-          grepl('quelque peu .* accord', base::tolower(item.11)) ~ 3,
-          grepl('quelque peu', base::tolower(item.11)) ~ 2,
-          grepl('fortement', base::tolower(item.11)) ~ 1
+          grepl('fortement .* accord', base::tolower(.data$item.11)) ~ 4,
+          grepl('quelque peu .* accord', base::tolower(.data$item.11)) ~ 3,
+          grepl('quelque peu', base::tolower(.data$item.11)) ~ 2,
+          grepl('fortement', base::tolower(.data$item.11)) ~ 1
         )
       ) %>%
       # Score the subscale scores
       dplyr::mutate(
-        tsk = scored.1 + scored.2 + scored.3 + scored.4 + scored.5 + scored.6 +
-          scored.7 + scored.8 + scored.9 + scored.10 + scored.11
+        tsk = .data$scored.1 + .data$scored.2 + .data$scored.3 + .data$scored.4 +
+          .data$scored.5 + .data$scored.6 + .data$scored.7 + .data$scored.8 +
+          .data$scored.9 + .data$scored.10 + .data$scored.11
       )
   }
 
@@ -289,11 +291,12 @@ score.tsk <- function(
   na_count <- .scored.tsk %>%
     dplyr::select(dplyr::contains("scored")) %>%
     dplyr::summarise_all(
-      ~ sum(is.na(.))/length(.scored.tsk$id)) %>%
+      ~ sum(is.na(.))/n()
+      )%>%
     tidyr::pivot_longer(cols = 1:11,
                         names_to = 'item',
                         values_to = 'na_prop') %>%
-    filter(na_prop >= 0.5)
+    filter(.data$na_prop >= 0.5)
   if(length(na_count$na_prop) >= 1){
     base::warning("The following items have high proportions (>= 50%) of NA values.",
                   " Argument `cols` may not be set correctly. \n",
@@ -307,29 +310,29 @@ score.tsk <- function(
     dplyr::select(
       id,
       date,
-      item.1,
-      item.2,
-      item.3,
-      item.4,
-      item.5,
-      item.6,
-      item.7,
-      item.8,
-      item.9,
-      item.10,
-      item.11,
-      scored.1,
-      scored.2,
-      scored.3,
-      scored.4,
-      scored.5,
-      scored.6,
-      scored.7,
-      scored.8,
-      scored.9,
-      scored.10,
-      scored.11,
-      tsk
+      .data$item.1,
+      .data$item.2,
+      .data$item.3,
+      .data$item.4,
+      .data$item.5,
+      .data$item.6,
+      .data$item.7,
+      .data$item.8,
+      .data$item.9,
+      .data$item.10,
+      .data$item.11,
+      .data$scored.1,
+      .data$scored.2,
+      .data$scored.3,
+      .data$scored.4,
+      .data$scored.5,
+      .data$scored.6,
+      .data$scored.7,
+      .data$scored.8,
+      .data$scored.9,
+      .data$scored.10,
+      .data$scored.11,
+      .data$tsk
     )
 
 
@@ -353,4 +356,3 @@ score.tsk <- function(
 
   return(.scored.tsk)
 }
-
